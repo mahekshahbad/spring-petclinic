@@ -31,7 +31,7 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/springboot-ci-demo .
-        docker tag ${{ secrets.DOCKER_USERNAME }}/springboot-ci-demo:${{ github.sha }}
+        docker tag ${{ secrets.DOCKER_USERNAME }}/springboot-ci-demo:${{ github.sha }} ${{ secrets.DOCKER_USERNAME }}/springboot-ci-demo:latest
 
     - name: Push Docker image to Docker Hub
       run: docker push ${{ secrets.DOCKER_USERNAME }}/springboot-ci-demo:${{ github.sha }}
