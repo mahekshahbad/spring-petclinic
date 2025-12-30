@@ -34,6 +34,6 @@ jobs:
         docker tag ${{ secrets.DOCKER_USERNAME }}/springboot-ci-demo:latest \
                    ${{ secrets.DOCKER_USERNAME }}/springboot-ci-demo:${{ github.sha }}
 
-    - name: Push Docker image to Docker-Hub
+    - name: Push Docker image to Docker Hub
       run: docker push ${{ secrets.DOCKER_USERNAME }}/springboot-ci-demo:${{ github.sha }}
 
